@@ -1,0 +1,40 @@
+<mat-drawer-container class="h-full w-full flex" autosize>
+        <mat-drawer #drawer class="flex flex-col w-full" mode="side" [opened]="true">
+
+        <div class="w-full h-full bg-blue-500 min-w-48">
+            <div class="w-full flex flex-end p-2">
+                <!-- <button type="button" mat-button > -->
+                <mat-icon (click)="drawer.toggle()" aria-hidden="false" aria-label="Example home icon" fontIcon="menu" />
+                <!-- </button> -->
+            </div>
+            
+            <div class="flex flex-col gap-2 items-center w-full">
+                @if(menuData().length > 0) {
+                    @for(data of menuData(); track data.path) {
+                        @if (data.type === 'default') {
+                            <sidebar-item [itemData]="data" />
+                        } @else {
+            
+                        }
+                    }
+                }
+            </div>
+        </div>
+    </mat-drawer>
+
+    @if (!drawer.opened) {
+        <div class="w-12 h-full bg-blue-500">
+            <div class="absolute p-2 w-3 gap-2">
+                <!-- <button type="button" mat-button > -->
+                <mat-icon (click)="drawer.toggle()" class="text-white" aria-hidden="false" aria-label="Example home icon"
+                    fontIcon="menu"></mat-icon>
+                <!-- </button> -->
+                
+                @for(data of menuData(); track data.path) {
+                    <sidebar-item-icon [sidebarData]="data" />
+                }
+            </div>
+        </div>
+    }
+
+</mat-drawer-container>

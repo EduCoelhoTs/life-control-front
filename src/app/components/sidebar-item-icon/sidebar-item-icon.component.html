@@ -1,0 +1,6 @@
+<ng-container>
+    <a routerLinkActive="text-white" [routerLink]="sidebarData().path" [routerLinkActiveOptions]="{ exact: true}" [title]="sidebarData().title"
+        [ngClass]="{'transition duration-300 text-blue-300 ease-in-out hover:text-white': !isActiveRoute(sidebarData().path)}">
+        <mat-icon aria-hidden="false" aria-label="icon" [fontIcon]="sidebarData().icon" />
+    </a>
+</ng-container>
