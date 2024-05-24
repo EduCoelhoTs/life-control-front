@@ -1,0 +1,29 @@
+<main class="w-full h-full flex">
+    <section class="w-1/2 h-full bg-gray-900"></section>
+    <section class="w-1/2 h-full">
+        <form [formGroup]="form" class="w-full h-full flex flex-col justify-center items-center gap-5 px-24 bg-black">
+            <mat-form-field class="w-full">
+                <mat-label>Email</mat-label>
+                <input type="email" matInput formControlName="email" placeholder="Ex. pat@example.com">
+                <!-- <mat-hint>Errors appear instantly!</mat-hint>
+                @if (emailFormControl.hasError('email') && !emailFormControl.hasError('required')) {
+                <mat-error>Please enter a valid email address</mat-error>
+                }
+                @if (emailFormControl.hasError('required')) {
+                <mat-error>Email is <strong>required</strong></mat-error>
+                } -->
+            </mat-form-field>
+            <mat-form-field class="w-full">
+                <mat-label>Senha</mat-label>
+                <input type="password" matInput formControlName="password">
+                <!-- <mat-hint>Errors appear instantly!</mat-hint>
+                    @if (emailFormControl.hasError('email') && !emailFormControl.hasError('required')) {
+                    <mat-error>Please enter a valid email address</mat-error>
+                    }
+                    @if (emailFormControl.hasError('required')) {
+                    <mat-error>Email is <strong>required</strong></mat-error>
+                    } -->
+            </mat-form-field>
+        </form>
+    </section>
+</main>

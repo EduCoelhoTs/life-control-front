@@ -1,18 +1,16 @@
 import { Routes } from '@angular/router';
-import FinanceComponent from './pages/finance/finance.component';
-import { BaseLayoutComponent } from './layout/component/base-layout/base-layout.component';
-import HomeComponent from './pages/home/home.component';
+import { LoginComponent } from './auth/pages/login/login.component';
+import BaseLayoutComponent from './layout/base-layout/base-layout.component';
 
 export const routes: Routes = [
     {
-        path: '',
-        loadComponent: () => HomeComponent,
-        pathMatch: 'full',
-        title: 'Home'
+        path: 'login',
+        component: LoginComponent
     },
     {
-        path: 'finance',
-        loadComponent: () => FinanceComponent,
-        title: 'Finance'
-    }
+        path: '',
+        loadComponent: () => BaseLayoutComponent,
+        loadChildren: () => import('./layout/base.routes').then(r => r.default),
+        pathMatch: 'full',
+    },
 ];
