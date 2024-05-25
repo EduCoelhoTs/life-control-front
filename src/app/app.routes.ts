@@ -10,7 +10,6 @@ export const routes: Routes = [
     {
         path: '',
         loadComponent: () => BaseLayoutComponent,
-        loadChildren: () => import('./layout/base.routes').then(r => r.default),
-        pathMatch: 'full',
+        loadChildren: () => import('./layout/base-layout/base.routes').then(r => r.default),
     },
 ];
